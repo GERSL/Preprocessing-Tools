@@ -76,11 +76,8 @@ function [band_data] = TopoCorrectICWindow(band_ori,index_exclude_cloud_water,su
     if length(cos_sita_exclude_cloud)<=10
         band_data = band_ori;
     else
-        
         c_fitted_1=polyfit(double(cos_sita_exclude_cloud),double(data_nir_ori_tmp),1);
-        band_data(pix_ind)=double(band_ori(pix_ind))-c_fitted_1(1,1)*(cos_sita(pix_ind)-sun_zenith_cos(pix_ind));
-             
+        band_data(pix_ind)=double(band_ori(pix_ind))-c_fitted_1(1,1)*(cos_sita(pix_ind)-sun_zenith_cos(pix_ind));    
     end
-    
 end
 
