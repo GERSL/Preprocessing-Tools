@@ -4,8 +4,6 @@ function data_nir = TopoCorrectIC(surf_band,index_exclude_cloud,sun_zenith,sun_a
     
     step = 50;
     buffer = 25;
-%     for i = 5000
-%         for j = 5000
     for i = 1:step:jidim(1)
         for j = 1:step:jidim(2)
             % extract window images
