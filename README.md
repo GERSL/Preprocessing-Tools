@@ -16,4 +16,4 @@ If using those functions, please cite the following papers:
 
 paper 1: Qiu, S., Lin, Y., Shang, R., Zhang, J., Ma, L. and Zhu, Z., 2019. Making Landsat Time Series Consistent: Evaluating and Improving Landsat Analysis Ready Data. Remote Sensing, 11(1), p.51.[https://doi.org/10.3390/rs11010051](https://doi.org/10.3390/rs11010051).
 
-paper 2: Qiu, S., He, B., Zhu, Z., Liao, Z. and Quan, X., 2017. Improving Fmask cloud and cloud shadow detection in mountainous area for Landsats 4–8 images. Remote Sensing of Environment, 199, pp.107-119. [https://doi.org/10.1016/j.rse.2017.07.002](https://doi.org/10.1016/j.rse.2017.07.002).
+paper 2: Qiu, S., He, B., Zhu, Z., Liao, Z. and Quan, X., 2017. Improving Fmask cloud and cloud shadow detection in mountainous area for Landsats 4–8 images. Remote Sensing of Environment, 199, pp.107-119. [https://doi.org/10.1016/j.rse.2017.07.002](https://doi.org/10.1016/j.rse.2017.07.002). (ONLY for SCS+C function)
