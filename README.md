@@ -1,5 +1,5 @@
-# Preprocess-Tools
-Preprocess tools for Landsat data: BRDF (Bidirectional Reflectance Distribution Function) and Topographic Corrections.
+# Preprocessing-Tools
+Preprocessing tools for Landsat data: BRDF (Bidirectional Reflectance Distribution Function) and Topographic Corrections.
 
 Please contact Shi Qiu (shi.qiu@uconn.edu), Rong Shang (shangrong@uconn.edu), and Zhe Zhu (zhe@uconn.edu) at Department of Natural Resources and the Environment, University of Connecticut if you have any questions.
 
