@@ -1,19 +1,27 @@
 function ref_norm = BRDFAdjust( ref_ori,band_name,...
     solar_zenith_angle,view_zenith_angle,solar_azimuth_angle,view_azimuth_angle,...
-    centre_lat, solar_zenith_angle_norm)
-% BRDFADJUST adjusts Prepare U.S. Landsat Analysis Ready Data (ARD) into CCDC
-%format.
-% OLI 5,110,31,72
-% MSI 11,106,29,68
+    varargin)
+% BRDFADJUST is to use the c-factor approach (Roy, D. P. et al., 2016) based on the RossThick-LiSparse-R BRDF model (Schaaf, Crystal B., et al. 2002).
+%--------------------------------------------------------------------------
+% Inputs:
+% ref_ori: orginal surface reflectance
+% band_name:  'Blue', 'Green', 'Red', 'NIR', 'SWIR1',  'SWIR2'
+% solar_zenith_angle (unit: decimal degrees)
+% view_zenith_angle (unit: decimal degrees)
+% solar_azimuth_angle (unit: decimal degrees)
+% view_azimuth_angle (unit: decimal degrees)
+% centre_lat (unit: decimal degrees)
+% solar_zenith_angle_norm (unit: decimal degrees)
 %--------------------------------------------------------------------------
 % Summary:
 % This function is to adjust the BRDFs of Landsat and Sentinel images to
 % niar observations.
 %--------------------------------------------------------------------------
 % History of revisions:
-% modify this function. by Rong Shang 6/27/2018
-% create this function. by Zhanmang Liao 5/13/2017
-% lamda=3;%Ñband number
+% use varargin by Shi Qiu 9/28/2020
+% modify this function. by Rong Shang and Shi Qiu 6/27/2018
+% create this function. by Shi Qiu and Zhanmang Liao 5/13/2017
+% lamda=3;%Ã‘band number
 %==========================================================================
     solar_zenith_angle = double(solar_zenith_angle);
     view_zenith_angle = double(view_zenith_angle);
@@ -25,6 +33,19 @@ function ref_norm = BRDFAdjust( ref_ori,band_name,...
     relative_azimuth_angle = deg2rad(view_azimuth_angle-solar_azimuth_angle);
     
     % if have centre's latitude
+    p = inputParser;
+    p.FunctionName = 'paras';
+    % optional
+    % default values.
+    addParameter(p,'centre_lat', []);
+    addParameter(p,'solar_zenith_angle_norm',[]);
+    parse(p,varargin{:});
+    centre_lat=p.Results.centre_lat;
+    solar_zenith_angle_norm=p.Results.solar_zenith_angle_norm;
+    if isempty(centre_lat)&&isempty(solar_zenith_angle_norm)
+        error('No centre latitude or normalized solar zenith angle for BRDF correction\n');
+    end
+    
     if exist('centre_lat','var')&&~isempty(centre_lat)
         solar_zenith_angle_norm_centre = 31.0076 - 0.1272*centre_lat + 0.01187*centre_lat^2 + ...
             2.4*10^(-5)*centre_lat^3  - 9.48*10^(-7)*centre_lat^4 - ...
