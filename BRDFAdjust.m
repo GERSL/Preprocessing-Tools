@@ -72,6 +72,8 @@ function ref_norm = BRDFAdjust( ref_ori,band_name,...
     end
     
     view_zenith_angle_norm = deg2rad(0);
+    % Note:
+    % Definition of the azimuthalangles is unimportant because at nadir the BRDF is independent of theazimuthal geometry (Roy, D. P. et al., 2016)
     relative_azimuth_angle_norm = deg2rad(180);
 
     % band name should be converted to band 1 2 3 4 5 and 7 for Landsat 7 data.
