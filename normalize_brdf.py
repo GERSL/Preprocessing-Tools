@@ -97,9 +97,6 @@ def main(ci, cn, des, target):
     
     targetout = target + "BRDF"
     
-    # the directory of the source, such as
-    # /gpfs/sharedfs1/zhulab/Shi/ProjectGlobalGreening/GlobalPathRow/p005r052/LandsatARD/SurfaceReflectanceBRDF
-    
     # check out the mean local time of Landsat8 and Sentinel2, from https://github.com/hankui/landsat_sentinel_solar_angle/blob/main/Pro.Landsat.Sentinel-2.sz.r
     # for Landsat-8 only
     l8_localtime = 10.18333333333
