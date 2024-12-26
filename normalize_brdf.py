@@ -4,6 +4,7 @@ __author__ = "Shi Qiu"
 # The solar zenith angle is modeled as a function of the day of the year and latitude for the sun-synchronous orbit, derived from an intermediate variable known as the local overpass time. 
 # The local overpass time is calculated using Eq. (4) from Li et al. 2019, based on an astronomical model parameterized by the local overpass time at the Equator, satellite inclination, and latitude.
 # We do not provide the brdf core model in python, but you can request it from Dr. Zhang (https://github.com/hankui).
+# Users need to intsall the libraries needed in this script by self.
 
 import os
 from pathlib import Path
