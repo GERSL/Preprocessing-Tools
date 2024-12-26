@@ -1,11 +1,11 @@
 # Preprocessing-Tools
 Preprocessing tools for Landsat data: BRDF (Bidirectional Reflectance Distribution Function) and Topographic Corrections.
 
-Please contact Shi Qiu (shi.qiu@uconn.edu) and Zhe Zhu (zhe@uconn.edu) at Department of Natural Resources and the Environment, University of Connecticut if you have any questions.
+Please contact Shi Qiu (shi.qiu@uconn.edu) and Zhe Zhu (zhe@uconn.edu) at the Department of Natural Resources and the Environment, University of Connecticut if you have any questions.
 
 ------------
 
-The BRDF correction is to use the c-factor approach [(Roy, D. P. et al., 2016)](https://doi.org/10.1016/j.rse.2016.01.023) based on the RossThick-LiSparse-R BRDF model [(Schaaf, Crystal B., et al. 2002)](https://doi.org/10.1016/S0034-4257(02)00091-3). We also provide the Python function to simulate target solar angles described by [Li et al. 2019](https://ieeexplore.ieee.org/document/8594675). This python version does not include the core BRDF model (model.py), that was developed by [Dr. Zhang](https://github.com/hankui) 
+The BRDF correction is to use the c-factor approach [(Roy, D. P. et al., 2016)](https://doi.org/10.1016/j.rse.2016.01.023) based on the RossThick-LiSparse-R BRDF model [(Schaaf, Crystal B., et al. 2002)](https://doi.org/10.1016/S0034-4257(02)00091-3). Additionally, we provide **a Python function (normalize_brdf.py) to simulate target solar angles** described by [Li et al. 2019](https://ieeexplore.ieee.org/document/8594675). This Python version does not include the core BRDF model (model.py), which was developed by [Dr. Zhang](https://github.com/hankui).
 
 The SCS correction is equivalent to projecting the sunlit canopy from the sloped surface to the horizontal surface in the direction of illumination [(Gu, D. et al., 1998)](https://doi.org/10.1016/S0034-4257(97)00177-6).
 
